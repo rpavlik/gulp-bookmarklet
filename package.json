@@ -2,9 +2,7 @@
   "name": "gulp-bookmarklet",
   "version": "1.0.0",
   "description": "Gulp wrapper for the bookmarklet package used to generate multiple bookmarklets",
-  "files": [
-    "index.js"
-  ],
+  "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
