@@ -3,7 +3,7 @@ var bookmarklet = require('bookmarklet');
 var netscape = require('netscape-bookmarks');
 var path = require('path');
 var replaceExt = require('replace-ext');
-var PluginError = gutil.PluginError;
+var PluginError = require('plugin-error');
 
 const PLUGIN_NAME = 'gulp-bookmarklet';
 
@@ -44,9 +44,9 @@ module.exports = function(opt) {
                     var bookmark = {};
                     bookmark[filename] = code;
                     code = netscape(bookmark);
-                    file.path = replaceExt(file.path, '.html');
+                    file.extname = '.html';
                 } else { // format === 'js'
-                    file.path = replaceExt(file.path, '.min.js');
+                    file.extname = '.min.js';
                 }
                 file.contents = new Buffer(code);
                 this.push(file);
