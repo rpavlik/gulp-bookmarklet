@@ -2,7 +2,7 @@ var assert = require('assert');
 var should = require('should');
 var path = require('path');
 var gulp = require('gulp');
-var File = require('gulp-util').File;
+var Vinyl = require('vinyl');
 var bookmarklet = require('../index');
 var bookmarkletGen = require('bookmarklet');
 var netscape = require('netscape-bookmarks');
@@ -20,13 +20,13 @@ describe('gulp-bookmarklet', function() {
     }
 
     beforeEach(function() {
-        fakeFile = new File({
+        fakeFile = new Vinyl({
             contents: new Buffer('alert("Hello world!");'),
             cwd: '/home/skylark95/',
             base: '/home/skylark95/test',
             path: '/home/skylark95/test/fakeFile.js'
         });
-        fakeFile2 = new File({
+        fakeFile2 = new Vinyl({
             contents: new Buffer('alert("Hello world 2!");'),
             cwd: '/home/skylark95/',
             base: '/home/skylark95/test',
