@@ -1,5 +1,4 @@
 var through = require('through2');
-var gutil = require('gulp-util');
 var bookmarklet = require('bookmarklet');
 var netscape = require('netscape-bookmarks');
 var path = require('path');
