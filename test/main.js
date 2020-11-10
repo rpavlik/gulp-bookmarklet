@@ -21,16 +21,16 @@ describe('gulp-bookmarklet', function() {
 
     beforeEach(function() {
         fakeFile = new Vinyl({
-            contents: new Buffer('alert("Hello world!");'),
-            cwd: '/home/skylark95/',
-            base: '/home/skylark95/test',
-            path: '/home/skylark95/test/fakeFile.js'
+            contents: Buffer.from('alert("Hello world!");'),
+            cwd: __dirname,
+            base: path.join(__dirname),
+            path: path.join(__dirname, 'fakeFile.js')
         });
         fakeFile2 = new Vinyl({
-            contents: new Buffer('alert("Hello world 2!");'),
-            cwd: '/home/skylark95/',
-            base: '/home/skylark95/test',
-            path: '/home/skylark95/test/fakeFile2.js'
+            contents: Buffer.from('alert("Hello world 2!");'),
+            cwd: __dirname,
+            base: path.join(__dirname),
+            path: path.join(__dirname, 'fakeFile2.js')
         });
         code = bookmarkletCode('alert("Hello world!");');
         code2 = bookmarkletCode('alert("Hello world 2!");');
@@ -44,10 +44,10 @@ describe('gulp-bookmarklet', function() {
         stream.on('data', function(newFile) {
             if (newFile == fakeFile) {
                 assert.equal(code, newFile.contents);
-                assert.equal('/home/skylark95/test/fakeFile.min.js', newFile.path);
+                assert.equal(path.join(__dirname, 'fakeFile.min.js'), newFile.path);
             } else {
                 assert.equal(code2, newFile.contents);
-                assert.equal('/home/skylark95/test/fakeFile2.min.js', newFile.path);
+                assert.equal(path.join(__dirname, 'fakeFile2.min.js'), newFile.path);
             }
         });
 
@@ -74,10 +74,10 @@ describe('gulp-bookmarklet', function() {
         stream.on('data', function(newFile) {
             if (newFile == fakeFile) {
                 assert.equal(bookmark, newFile.contents);
-                assert.equal('/home/skylark95/test/fakeFile.html', newFile.path);
+                assert.equal(path.join(__dirname, 'fakeFile.html'), newFile.path);
             } else {
                 assert.equal(bookmark2, newFile.contents);
-                assert.equal('/home/skylark95/test/fakeFile2.html', newFile.path);
+                assert.equal(path.join(__dirname, 'fakeFile2.html'), newFile.path);
             }
         });
 
@@ -101,7 +101,7 @@ describe('gulp-bookmarklet', function() {
 
         stream.on('data', function(newFile) {
             assert.equal(bookmark, newFile.contents);
-            assert.equal('/home/skylark95/test/bookmarklets.html', newFile.path);
+            assert.equal(path.join(__dirname, 'bookmarklets.html'), newFile.path);
         });
 
         stream.on('end', function() {
@@ -125,7 +125,7 @@ describe('gulp-bookmarklet', function() {
 
         stream.on('data', function(newFile) {
             assert.equal(bookmark, newFile.contents);
-            assert.equal('/home/skylark95/test/awesome.html', newFile.path);
+            assert.equal(path.join(__dirname, 'awesome.html'), newFile.path);
         });
 
         stream.on('end', function() {
@@ -151,10 +151,10 @@ describe('gulp-bookmarklet', function() {
         stream.on('data', function(newFile) {
             if (newFile == fakeFile) {
                 assert.equal(code, newFile.contents);
-                assert.equal('/home/skylark95/test/fakeFile.min.js', newFile.path);
+                assert.equal(path.join(__dirname, 'fakeFile.min.js'), newFile.path);
             } else {
                 assert.equal(code2, newFile.contents);
-                assert.equal('/home/skylark95/test/fakeFile2.min.js', newFile.path);
+                assert.equal(path.join(__dirname, 'fakeFile2.min.js'), newFile.path);
             }
         });
 
