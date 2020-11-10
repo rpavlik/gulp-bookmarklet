@@ -1,6 +1,6 @@
 {
-  "name": "gulp-bookmarklet",
-  "version": "1.0.0",
+  "name": "gulp-bookmarklet-babel7",
+  "version": "2.0.0",
   "description": "Gulp wrapper for the bookmarklet package used to generate multiple bookmarklets",
   "main": "index.js",
   "scripts": {
@@ -13,14 +13,14 @@
   "keywords": [
     "gulpplugin"
   ],
-  "author": "Derek <derek@skylark95.com>",
+  "author": "Derek <derek@skylark95.com>, Ryan Pavlik",
   "license": "GPL-3.0",
   "bugs": {
     "url": "https://github.com/skylark95/gulp-bookmarklet/issues"
   },
   "homepage": "https://github.com/skylark95/gulp-bookmarklet#readme",
   "dependencies": {
-    "bookmarklet": "github:rpavlik/bookmarklet#babel7",
+    "bookmarklet-babel7": "git+https://github.com/rpavlik/bookmarklet.git#babel7",
     "netscape-bookmarks": "0.0.0",
     "plugin-error": "^1.0.1",
     "through2": "^2.0.0"
