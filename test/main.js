@@ -4,7 +4,7 @@ var path = require('path');
 var gulp = require('gulp');
 var Vinyl = require('vinyl');
 var bookmarklet = require('../index');
-var bookmarkletGen = require('bookmarklet');
+var bookmarkletGen = require('bookmarklet-babel7');
 var netscape = require('netscape-bookmarks');
 
 describe('gulp-bookmarklet', function() {

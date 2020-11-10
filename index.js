@@ -1,5 +1,5 @@
 var through = require('through2');
-var bookmarklet = require('bookmarklet');
+var bookmarklet = require('bookmarklet-babel7');
 var netscape = require('netscape-bookmarks');
 var path = require('path');
 var PluginError = require('plugin-error');
