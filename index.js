@@ -4,7 +4,7 @@ var netscape = require('netscape-bookmarks');
 var path = require('path');
 var PluginError = require('plugin-error');
 
-const PLUGIN_NAME = 'gulp-bookmarklet';
+const PLUGIN_NAME = 'gulp-bookmarklet-babel7';
 
 module.exports = function(opt) {
     var opt = opt || {},
